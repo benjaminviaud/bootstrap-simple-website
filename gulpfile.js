@@ -88,9 +88,9 @@ function sass() {
 
     .pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie9' })))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-    .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEV, $.rev()))
+    .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEVELOPMENT, $.rev()))
     .pipe(gulp.dest(PATHS.dist + '/assets/css'))
-    .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEV, $.rev.manifest()))
+    .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEVELOPMENT, $.rev.manifest()))
     .pipe(gulp.dest(PATHS.dist + '/assets/css'))
     .pipe(browser.reload({ stream: true }));
 }
