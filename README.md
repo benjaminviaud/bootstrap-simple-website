@@ -8,7 +8,7 @@ $ git clone https://github.com/benjaminviaud/bootstrap-simple-website.git
 $ cd bootstrap-simple-website
 $ npm or yarn install
 ```
-### 4. Configuration
+### 2. Configuration
 #### YAML config file
 This starter theme includes a config-default.yml file. To make changes to the configuration, make a copy of config-default.yml and name it config.yml and make changes to that file. The config.yml file is ignored by git so that each environment can use a different configuration with the same git repo.
 
