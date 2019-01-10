@@ -123,8 +123,8 @@ const webpack = {
     return gulp.src(PATHS.entries)
       .pipe(named())
       .pipe(webpackStream(webpack.config, webpack2))
-      .pipe($.if(PRODUCTION, $.uglify()
-        .on('error', e => { console.log(e); }),
+      .pipe($.if(PRODUCTION, $.terser()
+        .on('error', e => { console.log(colors.red(e.toString())); }),
       ))
       .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEVELOPMENT, $.rev()))
       .pipe(gulp.dest(PATHS.dist + '/assets/js'))
